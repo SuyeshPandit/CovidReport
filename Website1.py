@@ -28,11 +28,11 @@ active_cases = []
 # Extracting the data from each row
 for row in rows:
     cells = row.find_all('td')
-    states.append(cells[0].text.strip())
-    cases.append(int(cells[1].text.strip().replace(',', '')))
-    deaths.append(int(cells[2].text.strip().replace(',', '')))
-    recovered.append(int(cells[3].text.strip().replace(',', '')))
-    active_cases.append(int(cells[4].text.strip().replace(',', '')))
+    states.append(cells[0].text.strip())  # Extract state name
+    cases.append(int(cells[1].text.strip().replace(',', '')))  # Extract number of cases
+    deaths.append(int(cells[2].text.strip().replace(',', '')))  # Extract number of deaths
+    recovered.append(int(cells[3].text.strip().replace(',', '')))  # Extract number of recoveries
+    active_cases.append(int(cells[4].text.strip().replace(',', '')))  # Extract number of active cases
 
 # Creating a bar chart to represent the data
 plt.figure(figsize=(12, 6))
